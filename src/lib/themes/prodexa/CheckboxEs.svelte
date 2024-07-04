@@ -64,7 +64,26 @@ input[type='search']::-webkit-search-cancel-button {
     cursor: pointer;
   } */
 
-.facet-item-title{
+
+.facet-item {
+  background: transparent;
+  border: 0;
+  padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.facet-item:hover {
+  background: #F8F8FA;
+}
+
+.facet-item.active {
+  background: #F8F8FA;
+}
+
+.facet-item__title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -73,12 +92,12 @@ input[type='search']::-webkit-search-cancel-button {
 </style>
 
 <script>
-import { createEventDispatcher } from 'svelte'
-import { GetColorName } from 'hex-color-to-color-name'
-import { nanoid } from 'nanoid'
-import ColoredBackground from '$lib/assets/konva/colored_background.png'
+  import {createEventDispatcher} from 'svelte'
+  import {GetColorName} from 'hex-color-to-color-name'
+  import {nanoid} from 'nanoid'
+  import ColoredBackground from '$lib/assets/konva/colored_background.png'
 
-const dispatch = createEventDispatcher()
+  const dispatch = createEventDispatcher()
 
 export let color = 'none'
 export let disabled = false
@@ -125,9 +144,9 @@ function handleSearchBox() {
 	{#if title}
 		<div class="relative mb-3 flex items-center justify-between gap-4">
 			{#if title}
-				<h6 class="relative z-0 first-letter:uppercase facet-item-title pr-6">
-					{title}
-				</h6>
+        <div title={title} class="facet-item">
+          <h6 class="relative {showSearchBox ? 'z-0' : 'z-20'} first-letter:uppercase pr-6 facet-item__title">{title}</h6>
+        </div>
 			{/if}
 
 			<div class="absolute inset-x-0 right-0 z-10 flex h-8 justify-end">
