@@ -41,7 +41,7 @@ export const mapProdexaProduct = (product: any) => {
 	const name = attributeValues?.[ATTRIBUTE_SHORT_DESCRIPTION]?.[LANGUAGE_TAG]
 	const description = attributeValues?.[ATTRIBUTE_LONG_DESCRIPTION]?.[LANGUAGE_TAG]
 
-	const images = product?.docAssociations
+	const images = product?.productDocuments
 		?.filter((doc) => documentViewTypes.includes(doc.documentViewTypeId))
 		?.map((doc) => `/prodexa-img/${doc.path}`)
 		?.filter((path, index, pathes) => pathes.indexOf(path) === index)
@@ -63,7 +63,7 @@ export const mapProdexaProduct = (product: any) => {
 	}
 
 	// TODO use groups hierarchy for categoryPool
-	const classificationId = product.classificationGroupAssociations?.[0]?.classificationId
+	const classificationId = product.productGroups?.[0]?.classificationId
 	const categoryPool = [{
 		id: classificationId,
 		name: classificationId,
