@@ -1,5 +1,5 @@
 {
-	"name": "pxc-storefront",
+	"name": "pxc-svelte-storefront",
 	"version": "1.0.0-SNAPSHOT",
 	"private": true,
 	"scripts": {
