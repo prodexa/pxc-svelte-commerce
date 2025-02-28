@@ -31,7 +31,7 @@
 		"@misiki/litekart": "0.0.16",
 		"@misiki/litekart-utils": "1.0.18",
 		"@vite-pwa/sveltekit": "0.3.0"
-    },
+	},
 	"devDependencies": {
 		"@aws-sdk/client-s3": "^3.511.0",
 		"@aws-sdk/lib-storage": "^3.511.0",
@@ -95,5 +95,6 @@
 		"zod": "3.22.4",
 		"zod-form-data": "2.0.2"
 	},
-	"type": "module"
+	"type": "module",
+	"packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
 }
